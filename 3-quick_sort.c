@@ -9,7 +9,7 @@
 void quick_sort(int *array, size_t size)
 {
 	srand(time(NULL));
-	quick_sort_do(array, 0, size - 1);
+	quick_sort_do(array, 0, size - 1, size);
 }
 /**
  * quick_sort_do - actual quick sorting function
@@ -19,7 +19,7 @@ void quick_sort(int *array, size_t size)
  *
  * Return: Nothing
  */
-void quick_sort_do(int *array, int low, int high)
+void quick_sort_do(int *array, int low, int high, size_t size)
 {
 	int pivot, pivot_val, i, j;
 
@@ -29,6 +29,8 @@ void quick_sort_do(int *array, int low, int high)
 		if (pivot != high)
 		{
 			swap(&array[pivot], &array[high]);
+			print_array(array, size);
+			
 		}
 		pivot_val = array[high];
 		i = low;
@@ -37,13 +39,15 @@ void quick_sort_do(int *array, int low, int high)
 			if (array[j] <= pivot_val)
 			{
 				swap(&array[i], &array[j]);
+				print_array(array, size);
 				i++;
 			}
 		}
 		swap(&array[i], &array[high]);
+		print_array(array, size);
 		pivot = i;
-		quick_sort_do(array, low, pivot - 1);
-		quick_sort_do(array, pivot + 1, high);
+		quick_sort_do(array, low, pivot - 1, size);
+		quick_sort_do(array, pivot + 1, high, size);
 	}
 }
 
