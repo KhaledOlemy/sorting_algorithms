@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdbool.h>
 /**
  * bubble_sort - sorting an array using bubble sort
  * where we go through the array in 2 nested loops
@@ -11,17 +12,22 @@
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
+	bool swapped;
 
 	for (i = 0; i < size; i++)
 	{
+		swapped = false;
 		for (j = 0; j < size - 1; j++)
 		{
 			if (array[j] > array[j + 1])
 			{
 				swap(&array[j], &array[j + 1]);
 				print_array(array, size);
+				swapped = true;
 			}
 		}
+		if (swapped == false)
+			break;
 	}
 }
 
