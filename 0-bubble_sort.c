@@ -1,5 +1,5 @@
 #include "sort.h"
-#include <stdbool.h>
+
 /**
  * bubble_sort - sorting an array using bubble sort
  * where we go through the array in 2 nested loops
