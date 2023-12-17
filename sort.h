@@ -27,4 +27,9 @@ void selection_sort(int *array, size_t size);
 void swap(int *val1, int *val2);
 void quick_sort(int *array, size_t size);
 void quick_sort_do(int *array, int low, int high, size_t size);
+void merge_sort(int *array, size_t size);
+void merge_compare(int *array, int *buffer, size_t start, size_t mid,
+size_t end);
+void merge_sort_do(int *array, int *buffer, size_t start, size_t end);
+void merge_sort(int *array, size_t size);
 #endif
