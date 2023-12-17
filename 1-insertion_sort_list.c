@@ -17,7 +17,7 @@ void insertion_sort_list(listint_t **list)
 	while (looper)
 	{
 		node = looper;
-		while (node && node->prev)
+		while (node->prev)
 		{
 			if (node->prev->n > node->n)
 			{
